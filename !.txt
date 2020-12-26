@@ -1,0 +1,3 @@
+결과에서 스트링만 가져오는 법
+i.string i.strings repr(i) i.text.strip()
+아직 무슨 차이가 있는지는 모르겠다.
