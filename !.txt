@@ -1,3 +1,15 @@
 결과에서 스트링만 가져오는 법
 i.string i.strings repr(i) i.text.strip()
 아직 무슨 차이가 있는지는 모르겠다.
+
+html_txt = requests.get('주소')
+html = BeautifulSoup(html.txt.text, 'html.parser')
+html2 = html.find(~)
+html3 = html.find_all(~)
+이 떄,
+type(html) = 'bs4.BeautifulSoup'
+type(html2) = 'bs4.element.Tag'
+type(html3) = 'bs4.element.ResultSet'
+이다. 이 상태에서 html3은 find를 더 이상 사용할 수 없지만, html2에선 사용이 가능하다.
+html3을 find를 사용하려고 하면
+ResultSet object has no attribute 'find'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()? 라는 오류가 나온다.
